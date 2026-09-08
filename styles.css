@@ -25,9 +25,11 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* 竖屏 9:16 舞台, 桌面端自动信箱化 */
+/* 竖屏 9:16 舞台, 桌面端自动信箱化 (vh 回退先行, dvh 兼容新浏览器) */
 #app {
   position: relative;
+  width: min(100vw, calc(100vh * 9 / 16));
+  height: min(100vh, calc(100vw * 16 / 9));
   width: min(100vw, calc(100dvh * 9 / 16));
   height: min(100dvh, calc(100vw * 16 / 9));
   margin: 0 auto;
@@ -39,7 +41,8 @@ html, body {
 }
 
 #stage { position: absolute; inset: 0; }
-#stage canvas { display: block; touch-action: none; }
+/* 兜底: 即使无内联样式, canvas 显示尺寸也必须锁定为舞台尺寸(否则按缓冲尺寸放大溢出) */
+#stage canvas { display: block; width: 100%; height: 100%; touch-action: none; }
 
 .hidden { display: none !important; }
 

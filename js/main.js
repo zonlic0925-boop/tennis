@@ -18,7 +18,9 @@ function resize() {
   const rect = stage.getBoundingClientRect();
   const w = Math.max(1, Math.round(rect.width || window.innerWidth));
   const h = Math.max(1, Math.round(rect.height || window.innerHeight));
-  renderer.setSize(w, h, false);
+  // updateStyle 必须为 true: 无内联宽高时 canvas 会按缓冲区尺寸(dpr 缩放后)显示,
+  // 在 dpr>=2 的手机上溢出舞台 2 倍, 画面被裁剪成左上角
+  renderer.setSize(w, h);
   game.resize(w, h);
 }
 window.addEventListener('resize', resize);
