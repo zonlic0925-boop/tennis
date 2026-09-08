@@ -10,7 +10,7 @@
 
 ```bash
 cd tennis
-npm install            # 安装 three.js(本地 node_modules, 无需网络运行时)
+npm install            # 可选：three.js 运行时单文件已随仓库 vendor/ 提供，无需网络
 npm run serve          # python -m http.server 8080
 # 或任意静态服务器: npx serve -l 8080 .
 ```
@@ -56,6 +56,7 @@ godot --path godot -- --shots=<DIR>       # 五连拍: 菜单/发球/回合/得�
 tennis/
 ├── index.html              # 入口 + import map
 ├── styles.css              # HUD/菜单(转播比分条风格)
+├── vendor/three.module.js  # three.js r160 运行时单文件(importmap 指向, 静态托管可用)
 ├── package.json
 ├── js/
 │   ├── main.js             # 渲染器/主循环/尺寸适配/调试接口
