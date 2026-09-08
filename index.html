@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#071522" />
+  <title>ACEMATCH · 竖屏 3D 网球对决</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+    { "imports": { "three": "./node_modules/three/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <div id="stage"></div>
+
+    <!-- HUD: 转播式比分条 -->
+    <header id="hud" class="hidden">
+      <div id="scoreboard">
+        <div class="score-side">
+          <span class="score-name">你</span>
+          <span id="score-p1" class="score-num">0</span>
+          <span id="dot-p1" class="serve-dot"></span>
+        </div>
+        <div class="score-sep"><span id="score-dash">—</span></div>
+        <div class="score-side">
+          <span id="dot-p2" class="serve-dot"></span>
+          <span id="score-p2" class="score-num">0</span>
+          <span class="score-name">对手</span>
+        </div>
+      </div>
+      <div id="phase-label">你的发球</div>
+    </header>
+
+    <div id="toast" class="hidden"></div>
+
+    <div id="hint" class="hidden"><span class="hint-arrow">▲</span><span id="hint-text">向上滑动发球</span></div>
+
+    <!-- 开始界面 -->
+    <div id="overlay-start">
+      <div class="card">
+        <div class="title-block">
+          <h1 class="title">ACEMATCH</h1>
+          <p class="subtitle">竖屏 3D 网球对决</p>
+        </div>
+        <button id="btn-start" class="btn-primary">开始比赛</button>
+        <p class="rules">滑动击球 · 左右控制落点 · 先得 7 分且领先 2 分获胜</p>
+      </div>
+      <p class="footnote">单机演示 · 对手为 AI（联网对战开发中）</p>
+    </div>
+
+    <!-- 结算界面 -->
+    <div id="overlay-end" class="hidden">
+      <div class="card">
+        <h2 id="end-title">胜利！</h2>
+        <p id="end-score" class="end-score">7 — 5</p>
+        <button id="btn-again" class="btn-primary">再来一局</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

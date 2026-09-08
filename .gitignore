@@ -1,0 +1,18 @@
+# 外部动画素材（商店/Mixamo 原始下载包），不随仓库公开分发
+动画模组/
+
+# node_modules 整体忽略；仅保留 index.html importmap 直引的运行时单文件（零 CDN、离线可用）
+node_modules/*
+!node_modules/three/
+node_modules/three/*
+!node_modules/three/build/
+node_modules/three/build/*
+!node_modules/three/build/three.module.js
+
+# Godot 编辑器缓存（导入产物/文件索引，可再生成）
+godot/.godot/
+
+# 本地杂项
+*.log
+.DS_Store
+Thumbs.db

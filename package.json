@@ -1,0 +1,17 @@
+{
+  "name": "tennis",
+  "version": "1.0.0",
+  "description": "AceMatch - 3D tennis mobile web game (Tennis Clash style)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/run-tests.mjs",
+    "serve": "python -m http.server 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "three": "^0.160.0"
+  }
+}
